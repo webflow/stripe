@@ -15,6 +15,6 @@ select
   data__object__redeem_by as redeem_by,
   data__object__amount_off as amount_discount,
   data__object__valid as valid,
-  "type" as event_type
+  event_type
 from events
-where "type" like 'coupon.%'
+where event_type like 'coupon.%'

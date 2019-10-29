@@ -15,9 +15,9 @@ final as (
         created as created_at,
 
         data__object__status as status,
-        "type" as event_type,
+        event_type,
 
-        data__object__start as start,
+        data__object__start as event_start,
         data__object__current_period_start as period_start,
         data__object__current_period_end as period_end,
         data__object__canceled_at as canceled_at,
@@ -30,7 +30,7 @@ final as (
 
     from events
 
-    where "type" like 'customer.subscription.%'
+    where event_type like 'customer.subscription.%'
 
 )
 

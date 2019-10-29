@@ -25,9 +25,6 @@ models:
     - not_null
 - name: stripe_subscription_transactions
   columns:
-  - name: period_end
-    tests:
-    - not_null
   - name: period_start
     tests:
     - not_null

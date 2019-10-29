@@ -21,6 +21,9 @@ select distinct
   first_value(created_at) over
     (partition by events.id order by created_at rows between unbounded preceding and unbounded following)
     as created_at,
+  max(wf_user_id) over
+    (partition by events.id order by created_at rows between unbounded preceding and unbounded following)
+    as wf_user_id,
   deleted_customers.deleted_at
 from events
   left outer join deleted_customers on events.id = deleted_customers.id

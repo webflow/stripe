@@ -9,6 +9,7 @@ select
   data__object__description as name,
   data__object__email as email,
   created as created_at,
-  "type" as event_type
+  event_type,
+  wf_user_id
 from events
-where "type" in ('customer.deleted', 'customer.created', 'customer.updated')
+where event_type in ('customer.deleted', 'customer.created', 'customer.updated')

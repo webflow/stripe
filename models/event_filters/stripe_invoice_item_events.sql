@@ -12,7 +12,7 @@ select
     nullif(data__object__subscription, '') as subscription_id,
     nullif(id, '') as event_id,
 
-    "type" as event_type,
+    event_type,
 
     data__object__date as invoice_date,
     data__object__period__start as period_start,
@@ -29,4 +29,4 @@ select
     created as created_at
 
 from events
-where "type" like 'invoiceitem.%'
+where event_type like 'invoiceitem.%'

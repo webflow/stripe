@@ -19,7 +19,7 @@ incremented as (
         invoice_date,
 
         case
-            when period_end - period_start = 0 then period_start
+            when period_end = period_start then period_start
             else period_end
         end as period_start,
 

@@ -12,7 +12,7 @@ select
     nullif(data__object__customer, '') as customer_id,
     nullif(id, '') as event_id,
 
-    "type" as event_type,
+    event_type,
 
     data__object__date as invoice_date,
     data__object__period_end as period_end,
@@ -34,5 +34,5 @@ select
     created as created_at
 
 from events
-where "type" like 'invoice.%'
-    and "type" not like '%payment%'
+where event_type like 'invoice.%'
+    and event_type not like '%payment%'

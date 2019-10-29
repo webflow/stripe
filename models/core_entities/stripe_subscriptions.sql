@@ -15,12 +15,12 @@ final as (
         last_value(event_id) over ( {{ partition_clause }} ) as event_id,
         last_value(customer_id) over ( {{ partition_clause }} ) as customer_id,
 
-        last_value(created_at) over ( {{ partition_clause }} ) as created_at,
+        first_value(created_at) over ( {{ partition_clause }} ) as created_at,
 
         last_value(status) over ( {{ partition_clause }} ) as status,
         last_value(event_type) over ( {{ partition_clause }} ) as event_type,
 
-        last_value(start) over ( {{ partition_clause }} ) as start,
+        last_value("start") over ( {{ partition_clause }} ) as event_start,
         last_value(period_start) over ( {{ partition_clause }} ) as period_start,
         last_value(period_end) over ( {{ partition_clause }} ) as period_end,
         last_value(canceled_at) over ( {{ partition_clause}} ) as canceled_at,

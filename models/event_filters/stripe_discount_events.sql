@@ -10,7 +10,7 @@ final as (
 
         data__object__id as id,
         created as created_at,
-        "type" as event_type,
+        event_type,
         data__object__customer as customer_id,
         data__object__coupon__id as coupon_id,
 
@@ -27,7 +27,7 @@ final as (
 
     from events
 
-    where "type" like 'customer.discount.%'
+    where event_type like 'customer.discount.%'
 
 )
 
